@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "0e02656c-29f7-4a8f-94ef-112addae5153",
+		"name": "21 centure",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://www.21vek.by/mobile/all/apple/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f7d2b458-0722-41dc-9f21-1332201e4155",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"apple\");",
+							"});",
+							"pm.test(\"Response time is less than 2s\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://www.21vek.by/mobile/all/apple/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"21vek",
+						"by"
+					],
+					"path": [
+						"mobile",
+						"all",
+						"apple",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
